@@ -1,4 +1,6 @@
-# wallet-mcp
+Note: WIP
+
+# Metamask for Agents!
 
 A local MCP (Model Context Protocol) server that enables AI agents like Claude to securely manage crypto wallets and send payments. **Private keys never leave your machine.**
 
