@@ -1,0 +1,40 @@
+{
+  "name": "wallet-mcp",
+  "version": "1.0.0",
+  "description": "Local MCP server for secure wallet operations - keys never leave your machine",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "wallet-mcp": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "start:debug": "DEBUG=true node dist/index.js",
+    "logs": "tail -f ~/.wallet-mcp/logs/wallet-mcp.log",
+    "logs:clear": "rm -f ~/.wallet-mcp/logs/wallet-mcp.log",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "wallet",
+    "wallet-mcp",
+    "ethereum",
+    "claude",
+    "ai-payments"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "viem": "^2.21.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.19",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
