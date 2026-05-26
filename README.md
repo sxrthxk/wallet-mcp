@@ -1,5 +1,3 @@
-Note: WIP
-
 # Metamask for Agents!
 
 A local MCP (Model Context Protocol) server that enables AI agents like Claude to securely manage crypto wallets and send payments. **Private keys never leave your machine.**
@@ -81,7 +79,7 @@ Claude → Wallet MCP: list_wallets()
          Returns: ["0xYourWallet..."]
 
 Claude → Wallet MCP: get_balance({walletAddress: "0xYourWallet", tokenAddress: "0x..."})
-         Returns: "Balance: 50 ARC"
+         Returns: "Balance: 50 USDC"
 
 Claude → Wallet MCP: send_token({
            fromAddress: "0xYourWallet",
