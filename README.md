@@ -21,7 +21,7 @@ npm run build
 
 ## 📋 Claude Desktop Configuration
 
-Add this to your Claude Desktop config (`~/Library/Application Support/Claude/claude_desktop_config.json` on macOS):
+Add this to your Claude Desktop config (`~/Library/Application Support/Claude/claude_desktop_config.json` on macOS) (Or just do it like Windows for more GUI friendly approach): 
 
 ```json
 {
@@ -36,6 +36,42 @@ Add this to your Claude Desktop config (`~/Library/Application Support/Claude/cl
   }
 }
 ```
+
+On Windows, the path for `claude_desktop_config.json` is a bit weird, so directly open the config via **Claude Desktop → Settings → Developer → Edit Config** and add the same server entry, using a Windows-style path:
+
+```json
+{
+  "mcpServers": {
+    "wallet-mcp": {
+      "command": "node",
+      "args": ["C:\\path\\to\\wallet-mcp\\dist\\index.js"],
+      "env": {
+        "WALLET_MCP_PASSWORD": "your-secure-password"
+      }
+    }
+  }
+}
+```
+
+If you are using WSL, point Claude to `wsl.exe` and use the Linux path inside WSL:
+
+```json
+{
+  "mcpServers": {
+    "wallet-mcp": {
+      "command": "C:\\Windows\\System32\\wsl.exe",
+      "args": ["~/.nvm/versions/node/v24.16.0/bin/node", "~/wallet-mcp/dist/index.js"],
+      "env": {
+        "WALLET_MCP_PASSWORD": "your-secure-password"
+      }
+    }
+  }
+}
+```
+
+> If the repo is on your C: drive and mounted in WSL, use `"args": ["node", "/mnt/c/path/to/wallet-mcp/dist/index.js"]` instead.
+
+> Note: In WSL setups, ensure `wsl.exe` is available in your Windows PATH.
 
 ### Configuration Options
 
